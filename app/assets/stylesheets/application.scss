@@ -13,8 +13,14 @@
  *= require_tree .
  *= require_self
  */
+ /*
+ *= require font-awesome
+ */
+
+
 @import "bootstrap-sprockets";  /*ここを追加*/
 @import "bootstrap";            /*ここを追加*/
+@import "font-awesome";
 
 header {
 	color:white;
@@ -31,4 +37,37 @@ body {
 
 .actions {
 	margin-top:10px;
+}
+
+.field {
+	padding-left: -15px;
+}
+
+
+/* Bookdatali testのレイアウト調整 */
+
+.test {
+    margin-top: 5px;
+	margin-bottom: -5px;
+    font-weight: normal;
+    display: block;
+}
+
+.col-xs-11 {
+	padding: 0;
+}
+
+.button {
+    display: block;
+	margin-top: 60px;
+	padding-left: 0;
+}
+
+.book_comment_content {
+	display: block;
+	padding-top: 5px;
+}
+
+.vertical-align {
+	vertical-align: bottom;
 }
