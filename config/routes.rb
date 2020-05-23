@@ -15,5 +15,6 @@ Rails.application.routes.draw do
     resources :book_comments, only: [:create]
   end
   resources :book_comments, only: [:destroy]
-
+  #resources :searchs, only: [:index]
+  get "search" => "searchs#search"
 end

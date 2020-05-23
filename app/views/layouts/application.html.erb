@@ -38,8 +38,21 @@
     </header>
     <!--ヘッダーの記述-->
     <div class="container">
-      <p id="notice"><%= notice %></p> <!--デバイスでnotice設定されているので呼び出してるだけ-->
-      <%= yield %>
+      <div class="row">
+        <div class="col-md-9 col-md-offset-3">
+          <% if user_signed_in? %>
+            <%= form_tag(search_path, :method => 'get') do %>
+              <%= text_field_tag :search, params[:search] %>
+                <%= select_tag(:table , options_for_select([["Users", "1"],["Book","2"]])) %>
+                <%= select_tag(:choice, options_for_select([["完全一致", "1"],["前方一致","2"],["後方一致","3"],["部分一致","4"]])) %>
+              <%= submit_tag "Search" %>
+            <% end %>
+          <% end %>
+        </div>
+        <p id="notice"><%= notice %></p> <!--デバイスでnotice設定されているので呼び出してるだけ-->
+        <%= yield %>
+      </div>
     </div>
   </body>
 </html>
+
