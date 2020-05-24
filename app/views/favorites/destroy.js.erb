@@ -1,0 +1,4 @@
+//books(index) の非同期処理(いいね)
+$(".book_<%= @book.id %>").html("<%= j(render 'books/book', book: @book ) %>");
+//book(show) の非同期処理(いいね)
+$(".book_detail_<%= @book.id %>").html("<%= j(render 'books/book_detail', book: @book ) %>");

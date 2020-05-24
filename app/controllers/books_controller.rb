@@ -16,7 +16,6 @@ class BooksController < ApplicationController
   end
 
   def create
-
   	@book = Book.new(book_params) #Bookモデルのテーブルを使用しているのでbookコントローラで保存する。
     @book.user_id = current_user.id
   	if @book.save#入力されたデータをdbに保存する。
